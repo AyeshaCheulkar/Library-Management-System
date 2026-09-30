@@ -232,7 +232,12 @@ npm install
 npm start                  # App on http://localhost:3000
 ```
 
-The in-memory data is reset every time the backend restarts.
+Without a `backend/.env`, the in-memory data is reset every time the backend restarts.
+
+If `backend/.env` sets `MONGODB_URI`, `npm run dev:local` (and `start.bat` / `start.sh`)
+uses that database instead, so the data persists and can be browsed in MongoDB Compass
+(database `library`). The demo data is loaded only when the database is empty; run
+`npm run seed` to reset it.
 
 ### With a real MongoDB database
 
